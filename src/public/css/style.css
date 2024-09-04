@@ -1,0 +1,115 @@
+/* Reseteo de estilo para uniformidad */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+
+body {
+    background-color: #fddad1;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner principal */
+.banner {
+    background: linear-gradient(to right, #e25959, #f3ca4e);
+    color: #C70039;
+    padding: 0px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+}
+
+.banner-title {
+    font-size: 4em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+}
+
+/* Título principal */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: underline;
+}
+
+/* Grid de productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de producto */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #fff;
+    border-color: red;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen de producto */
+.card-img {
+    width: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-stock {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #777;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.btnadmin {
+    width: 90px;
+}
