@@ -100,7 +100,19 @@ class ProductController {
             res.status(200).render("products", { products: newArray })
 
         } catch (error) {
-            res.status(500).send("Error en controller")
+            // res.status(500).send("Error en product controller - getAvailableProducts")
+
+            res.status(200).render("products", {
+                products: [{
+                    id: "qwerty",
+                    name: "test",
+                    category: "test",
+                    picture: "nothing",
+                    stock: 123,
+                    price: 123
+                }] // usar solo cuando no hay conexion a mongodb
+            })
+
         }
     }
 }

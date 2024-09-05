@@ -92,7 +92,7 @@ class ProductRepository {
             console.log("Producto actualizado")
 
             return updatedProduct
-            
+
         } catch (error) {
 
             console.log("Error en product repository")
@@ -123,8 +123,6 @@ class ProductRepository {
 
             const products = await ProductModel.find({ stock: { $gt: 0 } })
 
-            console.log(products)
-
             if (!products) {
                 console.log("Productos no encontrados")
                 return
@@ -136,7 +134,16 @@ class ProductRepository {
 
         } catch (error) {
 
-            console.log("Error en product repository")
+            // console.log("Error en product repository - getAvailbleProducts")
+
+            return [{
+                id: "qwerty",
+                name: "test",
+                category: "test",
+                picture: "nothing",
+                stock: 123,
+                price: 123
+            }] // usar solo cuando no hay conexion a mongodb
         }
     }
 

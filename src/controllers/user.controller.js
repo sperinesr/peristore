@@ -54,7 +54,7 @@ class UserController {
             res.status(200).send(user)
 
         } catch (error) {
-            res.status(500).send("Error en controller")
+            res.status(500).send("Error en user controller - getUser")
         }
 
     }
@@ -96,8 +96,6 @@ class UserController {
 
         try {
             const userFound = await userRepo.getUser(email);
-
-            // 4dminper1stor3
 
             if (!userFound) {
                 return res.status(401).send("Usuario no válido");

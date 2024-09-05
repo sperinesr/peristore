@@ -63,9 +63,8 @@ class UserRepository {
         try {
 
             const user = await UserModel.findOne({ email })
-            console.log(user)
 
-            if (!user) {
+            if (!user || user === undefined) {
                 console.log("Usuario no se encuentra")
                 return null
             }
@@ -76,7 +75,7 @@ class UserRepository {
 
         } catch (error) {
 
-            console.log("Error en user repository")
+            console.log("Error en user repository - getUser")
         }
     }
 
