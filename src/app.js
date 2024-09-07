@@ -7,9 +7,11 @@ const cookieParser = require("cookie-parser")
 
 // const methodOverride = require('method-override'); //para metodos delete y  put
 
-const port = 8080
+// base de datos
+const connectDB = require('./config/database.config.js');
+const { port } = require('./config/env.config.js');
 
-require("./database.js")
+connectDB();
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
