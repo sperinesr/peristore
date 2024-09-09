@@ -31,7 +31,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    filter: drop-shadow(0px 0px 2px white);
 }
 
 /* Contenedor principal */
@@ -69,6 +70,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0px 0px 1px black);
     transition: transform 0.2s;
     background-color: #fff;
     border-color: red;
@@ -128,30 +130,46 @@ body {
 }
 
 #btndatos {
-    background-color: #4CAF50; /* Color de fondo */
-    border: none; /* Sin borde */
-    color: white; /* Color del texto */
-    padding: 15px ; /* Relleno interno */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Sin subrayado */
-    position:fixed ; /* Mostrar en línea */
+    background-color: #4CAF50;
+    /* Color de fondo */
+    border: none;
+    /* Sin borde */
+    color: white;
+    /* Color del texto */
+    padding: 15px;
+    /* Relleno interno */
+    text-align: center;
+    /* Alineación del texto */
+    text-decoration: none;
+    /* Sin subrayado */
+    position: fixed;
+    /* Mostrar en línea */
     bottom: 0px;
     right: 80px;
-    font-size: 16px; /* Tamaño de la fuente */
-    margin: 10px 2px; /* Márgenes */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    border-radius: 50px; /* Esquinas redondeadas */
-    transition: background-color 0.3s, transform 0.3s; /* Transiciones para un efecto suave */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    margin: 10px 2px;
+    /* Márgenes */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 50px;
+    /* Esquinas redondeadas */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transiciones para un efecto suave */
 }
 
 /* Efecto al pasar el ratón (hover) */
 #btndatos:hover {
-    background-color: #45a049; /* Color de fondo en hover */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+    background-color: #45a049;
+    /* Color de fondo en hover */
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño en hover */
 }
 
 /* Estilo activo cuando se presiona el botón */
 #btndatos:active {
-    background-color: #3e8e41; /* Color de fondo cuando se hace clic */
-    transform: scale(0.98); /* Disminuye ligeramente el tamaño en clic */
+    background-color: #3e8e41;
+    /* Color de fondo cuando se hace clic */
+    transform: scale(0.98);
+    /* Disminuye ligeramente el tamaño en clic */
 }
