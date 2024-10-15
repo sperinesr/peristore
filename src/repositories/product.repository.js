@@ -43,7 +43,7 @@ class ProductRepository {
     async getProducts() {
         try {
 
-            const products = await ProductModel.find()
+            const products = await ProductModel.find().sort({ name: 1 });
 
             if (!products) {
                 console.log("Productos no encontrados")
@@ -121,7 +121,7 @@ class ProductRepository {
     async getAvailbleProducts() {
         try {
 
-            const products = await ProductModel.find({ stock: { $gt: 0 } })
+            const products = await ProductModel.find({ stock: { $gt: 0 } }).sort({ name: 1 });
 
             if (!products) {
                 console.log("Productos no encontrados")

@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-
 }
 
 body {
@@ -42,8 +41,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-
 }
 
 /* Título principal */
@@ -61,7 +58,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 /* Tarjeta de producto */
@@ -89,14 +86,14 @@ body {
 
 /* Contenido de la tarjeta */
 .card-content {
-    padding: 15px;
+    padding: 5px;
     text-align: center;
 }
 
 .card-title {
     font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
+    /* margin-bottom: 10px; */
+    /* color: #333; */
 }
 
 .card-stock {
@@ -111,6 +108,20 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+    margin-top: 100%;
+}
+
+.table-responsive {
+    width: 100%;
+}
+
+.inputtext {
+    width: 150px;
+}
+
+.inputn {
+    width: 80px;
 }
 
 .btnadmin {
