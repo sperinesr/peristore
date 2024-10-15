@@ -19,10 +19,13 @@
             <form action="/admin/{{this.id}}" method="POST">
                 <tbody>
                     <tr>
-                        <td><input class="inputtext" type="text" name="name" id="name" value="{{this.name}}" required="true"></td>
-                        <td><input class="inputtext" type="text" name="category" id="category" value="{{this.category}}" required="true">
+                        <td><input class="inputtext" type="text" name="name" id="name" value="{{this.name}}"
+                                required="true"></td>
+                        <td><input class="inputtext" type="text" name="category" id="category" value="{{this.category}}"
+                                required="true">
                         </td>
-                        <td><input class="inputtext" type="url" name="picture" id="picture" value="{{this.picture}}" required="true"></td>
+                        <td><input class="inputtext" type="url" name="picture" id="picture" value="{{this.picture}}"
+                                required="true"></td>
                         <td><input class="inputn" type="number" name="stock" id="stock" value="{{this.stock}}"
                                 required="true"></td>
                         <td><input class="inputn" type="number" name="price" id="price" value="{{this.price}}"
@@ -45,29 +48,31 @@
 
     <h1 class="title">Agregar Nuevos</h1>
 
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th>Name: </th>
-                <th>Category: </th>
-                <th>Picture: </th>
-                <th>Stock: </th>
-                <th>Price: </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <form action="/admin/products" method="post">
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <thead>
                 <tr>
-                    <td><input class="inputtext" type="text" name="name" id="name"></td>
-                    <td><input class="inputtext" type="text" name="category" id="category"></td>
-                    <td><input class="inputtext" type="url" name="picture" id="picture"></td>
-                    <td><input class="inputn" type="number" name="stock" id="stock"></td>
-                    <td><input class="inputn" type="number" name="price" id="price"></td>
-                    <td><button class="btnadmin">Add</button></td>
+                    <th>Name: </th>
+                    <th>Category: </th>
+                    <th>Picture: </th>
+                    <th>Stock: </th>
+                    <th>Price: </th>
+                    <th></th>
                 </tr>
-            </form>
-        </tbody>
+            </thead>
+            <tbody>
+                <form action="/admin/products" method="post">
+                    <tr>
+                        <td><input class="inputtext" type="text" name="name" id="name"></td>
+                        <td><input class="inputtext" type="text" name="category" id="category"></td>
+                        <td><input class="inputtext" type="url" name="picture" id="picture"></td>
+                        <td><input class="inputn" type="number" name="stock" id="stock"></td>
+                        <td><input class="inputn" type="number" name="price" id="price"></td>
+                        <td><button class="btnadmin">Add</button></td>
+                    </tr>
+                </form>
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 </div>
