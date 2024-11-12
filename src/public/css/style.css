@@ -22,6 +22,24 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-style: solid;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Canvas de nieve */
+.sky canvas {
+    z-index: 1;
+    /* Canvas de nieve en el fondo */
+    pointer-events: none;
+    /* Hace que el canvas no interfiera con los clicks */
+}
+
+/* Título y contenido del banner */
+.banner-title,
+.navbar {
+    position: relative;
+    z-index: 2;
+    /* Contenido del banner encima de la nieve */
 }
 
 .banner-title {
