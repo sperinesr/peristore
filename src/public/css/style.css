@@ -18,7 +18,7 @@ body {
 .banner {
     background: linear-gradient(to right, #e25959, #f3ca4e);
     color: #C70039;
-    padding: 0px 0;
+    padding: 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-style: solid;
@@ -52,10 +52,10 @@ body {
     filter: drop-shadow(0px 0px 2px white);
 }
 
+
 /* Estilos para los botones */
-.navbar-brand {
-    display: inline-block;
-    padding: 10px 20px;
+.btn {
+    width: 100px;
     border-radius: 8px;
     font-weight: bold;
     text-transform: uppercase;
@@ -64,32 +64,32 @@ body {
 }
 
 /* Botón STORE*/
-.navbar-brand[href="/"] {
-    background-color: #f3ca4e; /* amarillo */
-    color: white;
+.btn[href="/"] {
+    background-color: #f3ca4e;
+    color: black;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Botón ADMIN (oculto por defecto) */
-.navbar-brand[href="/login"] {
-    background-color: #ff5733; /* Rojo */
+.btn[href="/login"] {
+    background-color: #ff5733;
     color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
-    /* position: absolute; */
-    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 /* ADMIN aparece al pasar el mouse por la navbar */
-.container-sm:hover .navbar-brand[href="/login"] {
+.container-fluid:hover .btn[href="/login"] {
     opacity: 1;
     visibility: visible;
 }
 
 /* Efecto hover para ambos botones */
-.navbar-brand:hover {
+.btn:hover {
     filter: brightness(1.2);
 }
+
 
 /* Contenedor principal */
 .container {
