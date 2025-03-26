@@ -36,7 +36,7 @@ body {
 
 /* Título y contenido del banner */
 .banner-title,
-.navbar {
+.navbar-header {
     position: relative;
     z-index: 2;
     /* Contenido del banner encima de la nieve */
@@ -46,20 +46,19 @@ body {
     font-size: 4em;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     filter: drop-shadow(0px 0px 2px white);
 }
 
-
 /* Estilos para los botones */
 .btn {
     width: 100px;
+    margin-inline: 5.5%;
+    margin-bottom: 10px;
     border-radius: 8px;
     font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
     transition: all 0.3s ease;
 }
 
