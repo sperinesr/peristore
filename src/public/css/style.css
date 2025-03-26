@@ -26,10 +26,10 @@ body {
     overflow: hidden;
 }
 
-/* Canvas de nieve */
+/* Canvas de efectos */
 .sky canvas {
     z-index: 1;
-    /* Canvas de nieve en el fondo */
+    /* Canvas en el fondo */
     pointer-events: none;
     /* Hace que el canvas no interfiera con los clicks */
 }
@@ -50,6 +50,45 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     filter: drop-shadow(0px 0px 2px white);
+}
+
+/* Estilos para los botones */
+.navbar-brand {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Botón STORE*/
+.navbar-brand[href="/"] {
+    background-color: #f3ca4e; /* amarillo */
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón ADMIN (oculto por defecto) */
+.navbar-brand[href="/login"] {
+    background-color: #ff5733; /* Rojo */
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    /* position: absolute; */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* ADMIN aparece al pasar el mouse por la navbar */
+.container-sm:hover .navbar-brand[href="/login"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto hover para ambos botones */
+.navbar-brand:hover {
+    filter: brightness(1.2);
 }
 
 /* Contenedor principal */
@@ -89,6 +128,10 @@ body {
     transition: transform 0.2s;
     background-color: #fff;
     border-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card:hover {
