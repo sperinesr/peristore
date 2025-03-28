@@ -1,48 +1,85 @@
 <div class="container">
-
-    <h1 class="title">Administrador de Productos</h1>
+    <h1 class="title">Productos Disponibles</h1>
 
     <div class="table-responsive">
         <table class="table table-dark align-middle">
             <thead>
                 <tr>
-                    <th>Name: </th>
-                    <th>Category: </th>
-                    <th>Picture: </th>
-                    <th>Stock: </th>
-                    <th>Price: </th>
-                    <th></th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Picture URL</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Actions</th>
                     <th></th>
                 </tr>
             </thead>
-            {{#each products}}
-            <form action="/admin/{{this.id}}" method="POST">
-                <tbody>
-                    <tr>
-                        <td><input class="inputtext" type="text" name="name" id="name" value="{{this.name}}"
-                                required="true"></td>
-                        <td><input class="inputtext" type="text" name="category" id="category" value="{{this.category}}"
-                                required="true">
-                        </td>
-                        <td><input class="inputtext" type="url" name="picture" id="picture" value="{{this.picture}}"
-                                required="true"></td>
-                        <td><input class="inputn" type="number" name="stock" id="stock" value="{{this.stock}}"
-                                required="true"></td>
-                        <td><input class="inputn" type="number" name="price" id="price" value="{{this.price}}"
-                                required="true"></td>
-                        <td>
-                            <button class="btnadmin">Modify</button>
-                        </td>
-            </form>
-            <td>
-                <form action="/{{this.id}}" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button class="btnadmin">Delete</button>
-                </form>
-            </td>
-            </tr>
+            <tbody>
+                {{#each products}}
+                    {{#if this.stock}}
+                        <tr>
+                            <form action="/admin/{{this.id}}" method="POST">
+                                <td><input class="inputtext" type="text" name="name" value="{{this.name}}" required></td>
+                                <td><input class="inputtext" type="text" name="category" value="{{this.category}}" required></td>
+                                <td><input class="inputtext" type="url" name="picture" value="{{this.picture}}" required></td>
+                                <td><input class="inputn" type="number" name="stock" value="{{this.stock}}" required></td>
+                                <td><input class="inputn" type="number" name="price" value="{{this.price}}" required></td>
+                                <td class="actions">
+                                    <button class="btnadmin modify-btn">Modify</button>
+                                </td>
+                            </form>
+                            <td class="actions">
+                                <form action="/{{this.id}}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btnadmin delete-btn">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {{/if}}
+                {{/each}}
             </tbody>
-            {{/each}}
+        </table>
+    </div>
+
+    <h1 class="title">Productos No Disponibles</h1>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-no-stock">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Picture URL</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                    {{#unless this.stock}}
+                        <tr>
+                            <form action="/admin/{{this.id}}" method="POST">
+                                <td><input class="inputtext" type="text" name="name" value="{{this.name}}" required></td>
+                                <td><input class="inputtext" type="text" name="category" value="{{this.category}}" required></td>
+                                <td><input class="inputtext" type="url" name="picture" value="{{this.picture}}" required></td>
+                                <td><input class="inputn" type="number" name="stock" value="{{this.stock}}" required></td>
+                                <td><input class="inputn" type="number" name="price" value="{{this.price}}" required></td>
+                                <td class="actions">
+                                    <button class="btnadmin modify-btn">Modify</button>
+                                </td>
+                            </form>
+                            <td class="actions">
+                                <form action="/{{this.id}}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btnadmin delete-btn">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {{/unless}}
+                {{/each}}
+            </tbody>
         </table>
     </div>
 
@@ -52,27 +89,26 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th>Name: </th>
-                    <th>Category: </th>
-                    <th>Picture: </th>
-                    <th>Stock: </th>
-                    <th>Price: </th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Picture URL</th>
+                    <th>Stock</th>
+                    <th>Price</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <form action="/admin/products" method="post">
                     <tr>
-                        <td><input class="inputtext" type="text" name="name" id="name"></td>
-                        <td><input class="inputtext" type="text" name="category" id="category"></td>
-                        <td><input class="inputtext" type="url" name="picture" id="picture"></td>
-                        <td><input class="inputn" type="number" name="stock" id="stock"></td>
-                        <td><input class="inputn" type="number" name="price" id="price"></td>
-                        <td><button class="btnadmin">Add</button></td>
+                        <td><input class="inputtext" type="text" name="name"></td>
+                        <td><input class="inputtext" type="text" name="category"></td>
+                        <td><input class="inputtext" type="url" name="picture"></td>
+                        <td><input class="inputn" type="number" name="stock"></td>
+                        <td><input class="inputn" type="number" name="price"></td>
+                        <td><button class="btnadmin modify-btn">Add</button></td>
                     </tr>
                 </form>
             </tbody>
-
         </table>
     </div>
 </div>
