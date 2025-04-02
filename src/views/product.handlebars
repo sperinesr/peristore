@@ -1,19 +1,14 @@
-<div class="container">
-    <h1 class="title">Productos</h1>
-    <div class="products-grid">
-        {{#each products}}
-        <div class="card">
-            <a href="/products/{{this.id}}">
-                <img class="card-img" src="{{this.picture}}" alt="Imagen del producto">
-            </a>
-            <div class="card-content">
-                <h2 class="card-title">{{this.name}}</h2>
-                {{!-- <p class="card-category">Categoria: {{this.category}}</p> --}}
+<div class="container-product">
+    <h1 class="title">{{this.name}}</h1>
+    <div class="product-grid">
+        <div class="card-product">
+            <img class="card-product-img" src="{{this.picture}}" alt="Imagen del producto">
+            <div class="card-product-content">
+                <p class="card-product-category">Categoria: {{this.category}}</p>
                 {{!-- <p class="card-stock">Stock: {{this.stock}}</p> --}}
                 <p>Precio: ${{this.price}}</p>
             </div>
         </div>
-        {{/each}}
     </div>
 
 </div>

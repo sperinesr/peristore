@@ -45,7 +45,6 @@ body {
 .banner-title {
     font-size: 4em;
     margin: 0;
-    text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -74,14 +73,6 @@ body {
     background-color: #ff5733;
     color: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* ADMIN aparece al pasar el mouse por la navbar */
-.container-fluid:hover .btn[href="/login"] {
-    opacity: 1;
-    visibility: visible;
 }
 
 /* Efecto hover para ambos botones */
@@ -92,6 +83,13 @@ body {
 
 /* Contenedor principal */
 .container {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container-product {
     padding: 20px;
     display: grid;
     justify-content: center;
@@ -117,6 +115,12 @@ body {
     /* padding-bottom: 10px; */
 }
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
 /* Tarjeta de producto */
 .card {
     border: 1px solid #ddd;
@@ -133,7 +137,26 @@ body {
     justify-content: space-between;
 }
 
+.card-product {
+    /* border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0px 0px 1px black);
+    transition: transform 0.2s;
+    background-color: #fff;
+    border-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; */
+}
+
 .card:hover {
+    transform: scale(1.05);
+}
+
+.card-p:hover {
     transform: scale(1.05);
 }
 
@@ -144,8 +167,21 @@ body {
     padding: 10px;
 }
 
+.card-product-img {
+    width: 100%;         /* Hace que la imagen se ajuste al contenedor */
+    max-width: 600px;    /* No permite que supere los 800px */
+    height: auto;        /* Mantiene la proporción */
+    object-fit: contain;
+    padding: 10px;
+}
+
 /* Contenido de la tarjeta */
 .card-content {
+    padding: 5px;
+    text-align: center;
+}
+
+.card-product-content {
     padding: 5px;
     text-align: center;
 }
