@@ -1,12 +1,16 @@
 <div class="container-product">
-    <h1 class="title">{{this.name}}</h1>
+    <h1 class="title-product">{{this.name}}</h1>
     <div class="product-grid">
-        <div class="card-product">
+        <div class="card-product text-center">
             <img class="card-product-img" src="{{this.picture}}" alt="Imagen del producto">
             <div class="card-product-content">
-                <p class="card-product-category">Categoria: {{this.category}}</p>
                 {{!-- <p class="card-stock">Stock: {{this.stock}}</p> --}}
-                <p>Precio: ${{this.price}}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item">Categoria: {{this.category}}</li>
+                    <li class="list-group-item">Precio: ${{this.price}}</li>
+                    <li class="list-group-item">Stock: {{this.stock}}</li>
+                </ul>
             </div>
         </div>
     </div>
