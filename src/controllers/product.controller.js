@@ -45,7 +45,7 @@ class ProductController {
 
             const product = await productRepo.getProduct(id)
 
-            res.status(200).render("product", product)
+            res.status(200).render("product", product.toJSON())
 
         } catch (error) {
             res.status(500).send("Error en controller")
