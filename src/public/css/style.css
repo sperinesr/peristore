@@ -98,21 +98,28 @@ body {
 }
 
 /* Título principal */
-.title {
+.title-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+    padding: 10px;
     font-size: 2.5em;
     color: #333;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: underline;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .title-product {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+    padding: 10px;
     font-size: 2.5em;
     color: #333;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 /* Grid de productos */
@@ -131,8 +138,8 @@ body {
 
 /* Tarjeta de producto */
 .card {
-     overflow: hidden;
-     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     /* filter: drop-shadow(0px 0px 1px black);  */
     transition: transform 0.5s;
     justify-content: space-between;
@@ -161,6 +168,7 @@ body {
     width: 100%;
     object-fit: contain;
     padding: 10px;
+    
 }
 
 .card-product-img {
