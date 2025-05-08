@@ -91,6 +91,10 @@ class ProductController {
         try {
 
             const products = await productRepo.getAvailbleProducts()
+            
+            if (products) {
+                console.log("Productos encontrados")
+            }
 
             const newArray = products.map(product => {
                 const { _id, ...rest } = product.toObject();

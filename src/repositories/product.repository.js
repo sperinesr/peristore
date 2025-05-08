@@ -127,7 +127,6 @@ class ProductRepository {
                 console.log("Productos no encontrados")
                 return
             } else {
-                console.log("Productos encontrados")
                 return products
             }
 
