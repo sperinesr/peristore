@@ -50,7 +50,7 @@ class ProductRepository {
                 return
             }
 
-            console.log("Productos encontrados")
+            // console.log("Productos encontrados")
 
             return products
 
