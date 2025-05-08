@@ -33,8 +33,8 @@ router.post("/login", userController.login);
 router.get("/admin/products", checkUserRole(['admin']), viewsController.renderAdmin);
 
 //estado ok para checkear el estado de la app en render
-// router.get("/healthz", (req, res) => {
-//     res.status(200).send("OK");
-// });
+router.get("/healthz", (req, res) => {
+    res.status(200).send("OK");
+});
 
 module.exports = router;
