@@ -50,7 +50,7 @@ class ProductRepository {
                 return
             }
 
-            // console.log("Productos encontrados")
+            console.log("Productos encontrados")
 
             return products
 
@@ -126,9 +126,11 @@ class ProductRepository {
             if (!products) {
                 console.log("Productos no encontrados")
                 return
-            } else {
-                return products
             }
+
+            console.log("Productos disponibles encontrados")
+
+            return products
 
         } catch (error) {
 

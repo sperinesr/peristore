@@ -15,7 +15,7 @@ const checkUserRole = require("../middleware/checkrole.js");
 // router.get("/products/:pid", checkUserRole(['admin', 'premium']), passport.authenticate('jwt', { session: false }), viewsController.renderProduct);
 
 // router.get("/carts/:cid", checkUserRole(['user', 'premium']), viewsController.renderCart);
-router.get("/login",viewsController.renderLogin);
+router.get("/login", viewsController.renderLogin);
 router.post("/login", userController.login);
 // router.get("/register", viewsController.renderRegister);
 // router.get("/realtimeproducts", checkUserRole(['admin', 'premium']), viewsController.renderRealTimeProducts);
@@ -31,5 +31,10 @@ router.post("/login", userController.login);
 // router.get("/sendconfirmation", viewsController.renderConfirmation);
 
 router.get("/admin/products", checkUserRole(['admin']), viewsController.renderAdmin);
+
+//estado ok para checkear el estado de la app en render
+// router.get("/healthz", (req, res) => {
+//     res.status(200).send("OK");
+// });
 
 module.exports = router;
