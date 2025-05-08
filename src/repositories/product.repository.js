@@ -126,11 +126,10 @@ class ProductRepository {
             if (!products) {
                 console.log("Productos no encontrados")
                 return
+            } else {
+                console.log("Productos encontrados")
+                return products
             }
-
-            console.log("Productos encontrados")
-
-            return products
 
         } catch (error) {
 
