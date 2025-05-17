@@ -1,11 +1,7 @@
 const UserRepository = require("../repositories/user.repository.js")
 const userRepo = new UserRepository()
 
-const UserDTO = require("../dto/user.dto.js")
-
-const jwt = require("jsonwebtoken");
-
-const { createHash, isValidPassword } = require("../utils/hashbcrypt.js");
+const bcrypt = require('bcrypt');
 
 class UserController {
 
@@ -92,46 +88,18 @@ class UserController {
 
     async login(req, res) {
 
-        const { email, password } = req.body
+        const { email, password } = req.body;
 
-        try {
-            const userFound = await userRepo.getUser(email);
+        const user = await userRepo.getUser(email);
+        if (!user) return res.status(401).render('login', { error: 'Usuario no encontrado' });
 
-            if (!userFound) {
-                return res.status(401).send("Usuario no válido");
-            }
+        const match = await bcrypt.compare(password, user.password);
+        if (!match) return res.status(401).render('login', { error: 'Contraseña incorrecta' });
 
-            const isValid = isValidPassword(password, userFound);
-
-            if (!isValid) {
-                return res.status(401).send("Contraseña incorrecta");
-            }
-
-            const token = jwt.sign({ user: userFound }, "peristore", {
-                expiresIn: "1h"
-            });
-
-            // usuarioEncontrado.last_connection = new Date()
-            // await usuarioEncontrado.save()
-
-            res.cookie("peristoreToken", token, {
-                maxAge: 3600000,
-                httpOnly: true
-            });
-
-            res.status(200).redirect("/admin/products");
-
-        } catch (error) {
-            console.error(error);
-            res.status(500).send("Error interno del servidor");
-        }
+        req.session.user = { id: user._id, email: user.email };
+        res.redirect('/admin');
     }
 
-    // async profile(req, res) {
-    //     //Con DTO: 
-    //     const userDto = new UserDTO(req.user.first_name, req.user.last_name, req.user.email, req.user.role);
-    //     res.render("profile", { user: userDto });
-    // }
 }
 
 module.exports = UserController

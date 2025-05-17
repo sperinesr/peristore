@@ -1,0 +1,111 @@
+<main class="container mt-1">
+
+    <section class="border rounded shadow-sm">
+        <h2 class="m-3 text-center">Nuevo Producto</h2>
+
+        <form class="m-3" action="/admin/create" method="POST">
+            <div class="row g-3">
+                <div class="col-md-2">
+                    <label class="form-label" for="name">Nombre</label>
+                    <input id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label" for="category">Categoría</label>
+                    <input id="category" name="category" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label" for="image">Imagen (URL)</label>
+                    <input id="picture" type="url" name="picture" class="form-control" placeholder="https://..."
+                        required>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label" for="price">Precio</label>
+                    <input id="price" type="number" step="0.01" name="price" class="form-control" required>
+                </div>
+
+                <div class="col-md-2">
+                    <label class="form-label" for="stock">Stock</label>
+                    <input id="stock" type="number" name="stock" class="form-control" min="0">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success m-3 px-4">Guardar Producto</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="border rounded shadow-sm mt-3 mb-3 px-3">
+        <h2 class="m-3 text-center">Administrator</h2>
+
+        <div class="">
+            <form id="products-form" action="/admin/update" method="POST">
+                <table id="products-table"
+                    class="table table-bordered table align-middle text-center table-striped table-hover w-100">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Picture URL</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each products}}
+                        <tr>
+                            <input type="hidden" name="products[{{@index}}][id]" value="{{this.id}}">
+
+                            <td data-order="{{this.name}}">
+                                <input type="text" class="form-control form-control-sm"
+                                    name="products[{{@index}}][name]" value="{{this.name}}">
+                            </td>
+
+                            <td data-order="{{this.category}}">
+                                <input type="text" class="form-control form-control-sm"
+                                    name="products[{{@index}}][category]" value="{{this.category}}">
+                            </td>
+
+                            <td data-order="{{this.picture}}">
+                                <input type="text" class="form-control form-control-sm"
+                                    name="products[{{@index}}][picture]" value="{{this.picture}}">
+                            </td>
+
+                            <td data-order="{{this.stock}}">
+                                <input type="number" class="form-control form-control-sm"
+                                    name="products[{{@index}}][stock]" value="{{this.stock}}">
+                            </td>
+
+                            <td data-order="{{this.price}}">
+                                <input type="number" step="0.01" class="form-control form-control-sm"
+                                    name="products[{{@index}}][price]" value="{{this.price}}">
+                            </td>
+
+                            <td>
+                                <form action="/admin/delete/{{this.id}}" method="POST"
+                                    onsubmit="return confirm('¿Eliminar este producto?');">
+                                    <button type="button" class="btn btn-outline-danger btn-sm"
+                                        onclick="confirmDelete('{{this.id}}')">🗑</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+
+                </table>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success mb-3 px-4">💾 Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/scripts/tables.js"></script>
+<script src="/scripts/alerts.js"></script>

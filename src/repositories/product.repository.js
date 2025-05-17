@@ -80,7 +80,9 @@ class ProductRepository {
         }
     }
 
-    async updateProduct(id, { product }) {
+    async updateProduct(id, product) {
+
+
         try {
 
             const updatedProduct = await ProductModel.findByIdAndUpdate(id, product)
@@ -97,6 +99,8 @@ class ProductRepository {
 
             console.log("Error en product repository")
         }
+
+        // return await ProductModel.findByIdAndUpdate(id, product, { new: true });
     }
 
     async deleteProduct(id) {
