@@ -44,7 +44,7 @@ const adminRouter = require("../src/routes/admin.router.js")
 const viewRouter = require("../src/routes/view.router.js");
 
 app.use("/", viewRouter, productRouter, userRouter)
-app.use("/admin", /*requireAuth,*/ adminRouter)
+app.use("/admin", requireAuth, adminRouter)
 
 
 app.listen(port, () => {
