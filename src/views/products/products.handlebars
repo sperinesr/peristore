@@ -1,25 +1,27 @@
 <div class="container">
     <h1 class="title-container">Productos</h1>
-    <div class="products-grid">
+
+    {{#if products.length}}
+    <div class="products-grid mb-3">
         {{#each products}}
         <div class="card">
             <a href="/products/{{this.id}}">
                 <img class="card-img" src="{{this.picture}}" alt="Imagen del producto">
             </a>
             <div class="card-content">
-
-                {{!-- <h2 class="card-title">{{this.name}}</h2> --}}
-                {{!-- <p class="card-category">Categoria: {{this.category}}</p> --}}
-                {{!-- <p class="card-stock">Stock: {{this.stock}}</p> --}}
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item fs-4">{{this.name}}</li>
-                    <li class="list-group-item">Precio: ${{this.price}}</li>
+                    <li class="list-group-item">Precio: {{clp this.price}}</li>
                 </ul>
             </div>
         </div>
         {{/each}}
     </div>
-
+    {{else}}
+    <div class="products-grid">
+        <img src="img/noproducts.jpg" class="img-fluid" alt="No hay productos disponibles">
+    </div>
+    {{/if}}
 </div>
 
 <button id="btndatos" onclick="mostrarDatosTransferencia()">Ver datos de transferencia
@@ -27,4 +29,6 @@
 
 <a class="logowsp"
     href="https://wa.me/+56945856167/?text=Hola%20buenas%20quisiera%20consultar%20por%20algo%20de%20la%20tienda"
-    target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt=""></a>
+    target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="">
+</a>

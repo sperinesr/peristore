@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const exphbs = require("express-handlebars")
-const hbsHelpers = require('./helpers/handlebars');
+const hbsHelpers = require('./helpers/handlebars.js');
 const cookieParser = require("cookie-parser")
 const session = require('./config/session.config.js');
 const { requireAuth } = require('./middleware/auth.middleware.js')
@@ -28,9 +28,9 @@ app.engine('handlebars', exphbs.engine({
     },
     helpers: hbsHelpers
 }));
-
-app.engine("handlebars", exphbs.engine())
 app.set("view engine", "handlebars")
+
+
 app.set("views", "./src/views")
 
 app.use((req, res, next) => {
@@ -42,6 +42,7 @@ const productRouter = require("../src/routes/product.router.js")
 const userRouter = require("../src/routes/user.router.js")
 const adminRouter = require("../src/routes/admin.router.js")
 const viewRouter = require("../src/routes/view.router.js");
+const handlebars = require("./helpers/handlebars.js");
 
 app.use("/", viewRouter, productRouter, userRouter)
 app.use("/admin", requireAuth, adminRouter)
